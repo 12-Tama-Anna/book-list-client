@@ -27,6 +27,22 @@
       </div>
     </li>
   </script>
+
+  <script id="error-template" type="text/x-handlebars-template">
+    <h1>{{err}}</h1>
+  </script>
+
+  <script id="detail-view-template" type="text/x-handlebars-template">
+    <div>
+      <img src="{{image_url}}">
+        <ul>
+          <li><h1>{{title}}</h1></li>
+          <li><h2>{{author}}</h2></li>
+          <li><p>{{description}}</p></li>
+        </ul>
+    </div>
+  </script>
+
 </head>
 <body>
   <header>
@@ -40,12 +56,16 @@
       <h2 class="view-title">There be an issue, cap'n</h2>
       <section id="error-message"></section>
     </section>
+
+    <section id="detail-view" class="detail-view container"></section>
+
     <section class="book-view container">
       <h2 class="view-title">My Books</h2>
       <section class="book-list">
         <ul id="book-list"></ul>
       </section>
     </section>
+    
   </main>
   <footer>
     <aside class="social-links">
