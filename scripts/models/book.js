@@ -5,8 +5,8 @@ var app = app || {};
 const ENV = {};
 
 ENV.isProduction = window.location.protocol === 'https:';
-ENV.productionApiUrl = 'https://git.heroku.com/tr-ab-bookapp.git';
-ENV.developmentApiUrl = 'http://localhost:3001';
+ENV.productionApiUrl = 'https://tr-ab-bookapp.herokuapp.com';
+ENV.developmentApiUrl = 'http://localhost:3000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
 (function(module) {
@@ -35,3 +35,4 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
   module.Book = Book;
 })(app)
+// https://tr-ab-bookapp.herokuapp.com/api/v1/books
