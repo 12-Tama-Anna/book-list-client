@@ -25,8 +25,6 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   }
 
 
-  const url = '/api/v1/books';
-
   Book.all = [];
   Book.loadAll = rows => Book.all = rows.sort((a, b) => b.title - a.title).map(book => new Book(book));
 
@@ -38,8 +36,8 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   }
 
   Book.fetchOne = (result, callback) => {
-    $.getJSON(`${ENV.apiUrl}/api/v1/books`)
-      .then(book => Book.new = new Book(book))
+    $.getJSON(`${ENV.apiUrl}/api/v1/books/${callback}`)
+      .then(app.oneView.render).then(console.log('fetchOne'))
       .then(callback)
       .catch(errorCallback);
   }
@@ -73,7 +71,8 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     $('#book-create-url').val('');
     $('#book-create-description').val('');
   })
-  
+
   module.Book = Book;
 })(app)
 // https://tr-ab-bookapp.herokuapp.com/api/v1/books
+
