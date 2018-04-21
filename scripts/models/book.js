@@ -24,6 +24,9 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     return template(this);
   }
 
+
+  const url = '/api/v1/books';
+
   Book.all = [];
   Book.loadAll = rows => Book.all = rows.sort((a, b) => b.title - a.title).map(book => new Book(book));
 
@@ -34,16 +37,43 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
       .catch(errorCallback);
   }
 
+  Book.fetchOne = (result, callback) => {
+    $.getJSON(`${ENV.apiUrl}/api/v1/books`)
+      .then(book => Book.new = new Book(book))
+      .then(callback)
+      .catch(errorCallback);
+  }
 
-  Book.fetchOne = (ctx, callback) => {
-    $.get(`${ENV.apiUrl}/api/v1/books${ctx.params.book_id}`)
-      .then(results => {
-        Book.loadAll(results);
-        callback(ctx);
-      }, err => app.errorView.errorCallBack(err));
-  };
+  Book.prototype.create = function() {
+    $.post(`${ENV.apiUrl}/api/v1/books`, {
+      author: this.author,
+      title: this.title,
+      isbn: this.isbn,
+      url: this.url,
+      description: this.description
+    })
+      .then().then(console.log())
+      .catch(errorCallback);
+  }
 
-
+  $('.book-create').on('submit', 'form', (event) => {
+    event.preventDefault();
+    let book = new Book({
+      author: $('#book-create-author').val(),
+      title: $('#book-create-title').val(),
+      isbn: $('#book-create-isbn').val(),
+      url: $('#book-create-url').val(),
+      description: $('#book-create-description').val()
+    });
+    console.log(book);
+    book.create();
+    $('#book-create-author').val('');
+    $('#book-create-title').val('');
+    $('#book-create-isbn').val('');
+    $('#book-create-url').val('');
+    $('#book-create-description').val('');
+  })
+  
   module.Book = Book;
 })(app)
 // https://tr-ab-bookapp.herokuapp.com/api/v1/books
