@@ -50,6 +50,33 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
       .catch(errorCallback);
   };
 
+  Book.create = function(book) {
+    $.post(`${ENV.apiUrl}/api/v1/books`, {
+      title: book.title,
+      author: book.author,
+      isbn: book.isbn,
+      url: book.url,
+      description: book.description
+    })
+      .then(() => {page('/new')})
+      .catch(err => console.error(err));
+  };
+
+  Book.submit = event => {
+    event.preventDefault();
+    let book = new Book({
+      title : $('#book-create-title').val(),
+      author : $('#book-create-author').val(),
+      isbn : $('#book-create-isbn').val(),
+      url : $('#book-create-url').val(),
+      description : $('#book-create-description').val()
+    })
+
+
+    app.Book.create(book);
+  }
+
+  $('#new-book').on('submit', Book.submit);
 
 
   module.Book = Book;

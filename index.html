@@ -42,12 +42,20 @@
 
 </head>
 <body>
+
+
+  
   <header>
+
+      <h2><a href="/new">Add a new Book</a></h2>
     <div class="header-content">
       <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
       <h1>Code Fellows Books</h1>
     </div>
   </header>
+
+
+
   <main>
     <section class="error-view container">
       <h2 class="view-title">There be an issue, cap'n</h2>
@@ -66,33 +74,35 @@
     </section>
 
 
-    <section id="write" class="form-view container">
-      <form action="#" id="book-form">
-          <label>
-              <input type="text" id="book-title" placeholder="Book title" required>
-          </label>
-          
-          <label>
-              <input type="text" id="book-author" placeholder="Book author" required>
-          </label> 
-          
-          <label>
-              <input type="text" id="book-isbn" placeholder="Book isbn" required>
-          </label> 
-          
-          <label>
-              <input type="text" id="book-image_url" placeholder="Book image url" required>
-          </label>
-          
-          <label>
-              <textarea id="book-description" rows="8" cols="40" required></textarea>
-          </label>
-
-          <button type="submit">Submit</button>
+    <section class="book-create container">
       
+      <form id="new-book">
+        <fieldset>
+          <legend>Add a new Book!</legend>
+          
+          <legend>Title</legend>
+          <input type="text" id="book-create-title" placeholder="title" required>
+          
+          <legend>Author</legend>
+          <input type="text" id="book-create-author" placeholder="author" required>
+          
+          <legend>isbn</legend>
+          <input type="text" id="book-create-isbn" placeholder="isbn" required>
+          
+          <legend>New Book Url</legend>
+          <input type="text" id="book-create-url" placeholder="newBookUrl" required>
+          
+          <legend>Description</legend>
+          <input type="text" id="book-create-description" placeholder="description" required>
+        
+          
+        </fieldset>
+        <button type="submit"><a href="/">NEW BOOK!</a></button>
+
       </form>
-  
-  </section>
+    </section>
+
+
 
     
   </main>
