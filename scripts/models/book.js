@@ -10,7 +10,7 @@ ENV.developmentApiUrl = 'http://localhost:3001';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
 (function(module) {
-  
+
   function errorCallback(err) {
     console.error(err);
     module.errorView.initErrorPage(err);
@@ -45,7 +45,6 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
         console.log('heloooo');
         app.showBook = Book.loadAll(results);
         console.log(Book.loadAll(results));
-        // callback(id);
       })
       .then(callback)
       .catch(errorCallback);
