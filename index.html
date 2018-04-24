@@ -17,7 +17,7 @@
   </script>
 
   <script type="text/x-handlebars-template" id="book-list-template">
-    <li class="book-items" data-bookid={{book_id}}>
+    <li class="book-items">
       <div class="book-container">
         <img src={{image_url}}>
         <div class="book-overlay">
@@ -28,9 +28,6 @@
     </li>
   </script>
 
-  <script id="error-template" type="text/x-handlebars-template">
-    <h1>{{err}}</h1>
-  </script>
 
   <script id="detail-view-template" type="text/x-handlebars-template">
     <div>
@@ -57,7 +54,9 @@
       <section id="error-message"></section>
     </section>
 
-    <section id="detail-view" class="detail-view container"></section>
+    <section id="detail-view" class="detail-view container">
+      <ul id="view-details"></ul>
+    </section>
 
     <section class="book-view container">
       <h2 class="view-title">My Books</h2>
@@ -79,14 +78,13 @@
   </footer>
   <!-- External CDN Resources -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 
   <!-- Application Resources -->
-  <script src="./scripts/models/book.js" type="text/javascript"></script>
-  <script src="./scripts/views/book-view.js" type="text/javascript"></script>
-  <script src="./scripts/views/error-view.js" type="text/javascript"></script>
-  <script src="./scripts/views/one-view.js" type="text/javascript"></script>
-  <script src="./scripts/views/routes.js" type="text/javascript"></script>
+  <script src="scripts/models/book.js" type="text/javascript"></script>
+  <script src="scripts/views/book-view.js" type="text/javascript"></script>
+  <script src="scripts/views/error-view.js" type="text/javascript"></script>
+  <script src="scripts/views/routes.js" type="text/javascript"></script>
 </body>
 </html>
