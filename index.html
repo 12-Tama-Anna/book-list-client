@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./styles/base.css">
   <link rel="stylesheet" href="./styles/layout.css">
   <link rel="stylesheet" href="./styles/modules.css">
+  <link rel="stylesheet" href="./styles/style.css">
 
   <!-- Application Templates -->
   <script type="text/x-handlebars-template" id="error-template">
@@ -47,6 +48,20 @@
       <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
       <h1>Code Fellows Books</h1>
     </div>
+<!-- hamburger icon -->
+<img src="scripts/models/images/hamburger.png" class="hamburger">
+
+  <nav class="main-nav">
+    <div class="icon-menu hamburger"></div>
+    <ul class="nav-ul">
+      <li class="tab" data-content="articles">
+        <a href="#" class="icon-home">Home</a>
+      </li>
+      <li class="tab" data-content="about">
+        <a href="#" class="icon-address-book"> About</a>
+      </li>
+    </ul>
+  </nav>
   </header>
   <main>
     <section class="error-view container">
@@ -66,35 +81,31 @@
     </section>
 
 
-    <section id="write" class="form-view container">
-      <form action="#" id="book-form">
-          <label>
-              <input type="text" id="book-title" placeholder="Book title" required>
-          </label>
-          
-          <label>
-              <input type="text" id="book-author" placeholder="Book author" required>
-          </label> 
-          
-          <label>
-              <input type="text" id="book-isbn" placeholder="Book isbn" required>
-          </label> 
-          
-          <label>
-              <input type="text" id="book-image_url" placeholder="Book image url" required>
-          </label>
-          
-          <label>
-              <textarea id="book-description" rows="8" cols="40" required></textarea>
-          </label>
-
-          <button type="submit">Submit</button>
-      
-      </form>
+  <section class="addNewBook">
   
-  </section>
-
-    
+    <form id=newBookForm method="post">
+      
+      <fieldset>
+        <legend>Add a new Book!</legend>
+        <input type="text" id="book-create" placeholder="author" required>
+  
+        <legend>Author</legend>
+        <input type="text" id="book-create-author" placeholder="author" required>
+        <legend>Title</legend>
+        <input type="text" id="book-create-title" placeholder="title" required>
+        <legend>isbn</legend>
+        <input type="text" id="book-create-isbn" placeholder="isbn" required>
+        <legend>New Book Url</legend>
+        <input type="text" id="book-create-url" placeholder="newBookUrl" required>
+        <legend>Description</legend>
+        <input type="text" id="book-create-description" placeholder="description" required>
+  
+        <button type="submit">SUBMIT</button>
+  
+      </fieldset>
+  
+    </form>
+  </section> 
   </main>
   <footer>
     <aside class="social-links">
