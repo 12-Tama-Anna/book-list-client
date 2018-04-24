@@ -1,0 +1,93 @@
+body {
+  font-family: "Arial", Serif;
+  background-color: #f4f4f4
+}
+
+.navbar{
+  background-color: maroon;
+  overflow:hidden;
+  height: 63px;
+}
+
+.navbar a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar ul{
+  margin: 8px 0 0 0;
+  list-style:none;
+}
+
+.side-nav a:hover{
+  color: #fff;
+}
+
+.side-nav .btn-close{
+  position:absolute;
+  top: 0;
+  right: 22px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main{
+  transition:margin-left 0.5s;
+  padding:20px;
+  overflow:hidden;
+  width:100%;
+}
+
+@media(max-width:400px){
+  .navbar-nav{display:none}
+}
+
+form {
+  position: relative;
+  left: 75px;
+  width: 300px;
+  height: 250px;
+
+}
+
+input[type=text] {
+  background-color: lightblue;
+  color: #000
+}
+
+#newBook {
+  color: burlywood
+}
+
+legend {
+  color: burlywood
+}
+
+#insertion {
+  width: 100%;
+}
+
+.addNewBook {
+  -webkit-box-sizing: border-box;
+  
+}
+
+ {
+
+
+}
+
+button {
+  background-color: grey;
+  color: #fff;
+  width: 100px;
+  height: 25px;
+  border-radius: 10px;
+}
+
+

@@ -54,7 +54,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
       .catch(errorCallback);
   }
 
-  $('.book-create').on('submit', 'form', (event) => {
+  $('.addNewBook').on('submit', 'form', (event) => {
     event.preventDefault();
     let book = new Book({
       author: $('#book-create-author').val(),
