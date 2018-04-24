@@ -22,6 +22,12 @@ var app = app || {};
   };
 
 
+  bookView.initCreatePage = () => {
+    $('.container').hide();
+    $('.book-create').show();
+  };
+
+
   module.bookView = bookView;
 })(app)
 
